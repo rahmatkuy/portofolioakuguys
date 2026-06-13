@@ -1,0 +1,355 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(145deg, #e9eff7 0%, #dbe4ed 100%);
+  font-family: 'Inter', sans-serif;
+  padding: 2rem 1rem;
+  color: #1e2a3e;
+}
+
+/* main card container */
+.cv-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 2.5rem;
+  box-shadow: 0 25px 45px -12px rgba(0, 0, 0, 0.3), 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: all 0.2s ease;
+}
+
+/* dua kolom utama: sidebar (kiri) + konten (kanan) */
+.cv-grid {
+  display: grid;
+  grid-template-columns: 34% 66%;
+}
+
+/* ========= SIDEBAR KIRI ========= */
+.sidebar {
+  background: #0f172a;
+  color: #f1f5f9;
+  padding: 2rem 1.8rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.8rem;
+}
+
+.profile-img {
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+.profile-img img {
+  width: 170px;
+  height: 170px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid #facc15;
+  box-shadow: 0 12px 22px rgba(0,0,0,0.3);
+  transition: transform 0.25s;
+}
+.profile-img img:hover {
+  transform: scale(1.02);
+}
+
+.name-side {
+  font-size: 1.7rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin-top: 0.5rem;
+  text-align: center;
+  background: linear-gradient(135deg, #facc15, #ffb347);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.role {
+  text-align: center;
+  font-size: 0.9rem;
+  background: #1e293b;
+  display: inline-block;
+  width: 100%;
+  padding: 0.4rem 0;
+  border-radius: 40px;
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+.info-section h3, .skill-section h3, .contact-section h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  border-left: 5px solid #facc15;
+  padding-left: 12px;
+  margin-bottom: 1rem;
+  letter-spacing: -0.2px;
+}
+
+.info-list, .contact-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.info-list li, .contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.9rem;
+}
+.info-list i, .contact-list i {
+  width: 28px;
+  color: #facc15;
+  font-size: 1.2rem;
+}
+
+.skill-badge {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 0.5rem;
+}
+.skill-badge span {
+  background: #1e293b;
+  padding: 6px 14px;
+  border-radius: 40px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+.skill-badge span:hover {
+  background: #facc15;
+  color: #0f172a;
+  cursor: default;
+}
+
+/* ========= KONTEN KANAN ========= */
+.main-content {
+  background: white;
+  padding: 2rem 2rem 2rem 2rem;
+}
+
+.section {
+  margin-bottom: 2rem;
+}
+.section-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 3px solid #facc15;
+  padding-bottom: 0.4rem;
+  margin-bottom: 1.2rem;
+}
+.section-title i {
+  color: #facc15;
+  font-size: 1.6rem;
+}
+
+/* text formatting */
+.about-text p {
+  line-height: 1.55;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: #2c3e50;
+}
+.highlight {
+  background: #fef9e3;
+  font-weight: 600;
+  padding: 2px 6px;
+  border-radius: 8px;
+  color: #b45309;
+}
+.italic-note {
+  font-style: italic;
+  color: #475569;
+  border-left: 3px solid #facc15;
+  padding-left: 1rem;
+}
+.bold-text {
+  font-weight: 800;
+  color: #0f172a;
+}
+
+/* gambar galeri */
+.image-gallery {
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin: 1.2rem 0 0.5rem;
+}
+.gallery-card {
+  background: #f8fafc;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 14px rgba(0,0,0,0.05);
+  transition: transform 0.2s;
+  flex: 1;
+  min-width: 130px;
+  text-align: center;
+}
+.gallery-card img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  transition: 0.2s;
+}
+.gallery-card:hover {
+  transform: translateY(-6px);
+}
+.gallery-card p {
+  font-size: 0.75rem;
+  padding: 8px;
+  font-weight: 500;
+  background: white;
+}
+
+/* tabel styling */
+.table-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.tbl {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 20px;
+  border: 1px solid #e2e8f0;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.02);
+}
+.tbl table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+.tbl th {
+  background: #0f172a;
+  color: white;
+  padding: 12px 8px;
+  font-weight: 600;
+}
+.tbl td {
+  padding: 10px 8px;
+  border-bottom: 1px solid #e2e8f0;
+}
+.tbl tr:last-child td {
+  border-bottom: none;
+}
+.tbl tr:hover {
+  background: #fefce8;
+}
+
+/* list area */
+.list-duo {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  margin: 1rem 0 0.8rem;
+}
+.list-box {
+  flex: 1;
+  background: #f1f5f9;
+  border-radius: 20px;
+  padding: 1rem 1.5rem;
+}
+.list-box h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.7rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.custom-list {
+  list-style: none;
+}
+.custom-list li {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.custom-list li i {
+  color: #facc15;
+  width: 22px;
+}
+
+/* link area */
+.link-area {
+  background: #f8fafc;
+  padding: 1rem 1.5rem;
+  border-radius: 24px;
+  margin: 1.5rem 0 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-link {
+  background: #0f172a;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 40px;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.85rem;
+  transition: 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.btn-link:hover {
+  background: #facc15;
+  color: #0f172a;
+  transform: scale(1.02);
+}
+.internal-links a {
+  margin-right: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #0f172a;
+  border-bottom: 1px dashed #facc15;
+}
+.internal-links a:hover {
+  color: #facc15;
+  border-bottom-color: #0f172a;
+}
+
+.comment-note {
+  font-size: 0.7rem;
+  color: #62748c;
+  background: #f1f5f9;
+  padding: 8px 16px;
+  border-radius: 30px;
+  text-align: center;
+  margin-top: 2rem;
+  font-family: monospace;
+}
+
+@media (max-width: 850px) {
+  .cv-grid {
+    grid-template-columns: 1fr;
+  }
+  .sidebar {
+    text-align: left;
+  }
+  .table-wrapper {
+    flex-direction: column;
+  }
+}
+
+footer {
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #e2e8f0;
+  background: white;
+}
